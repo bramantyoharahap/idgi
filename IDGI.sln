@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDGI.WebApi", "IDGI.WebApi\IDGI.WebApi.csproj", "{FB44753D-B7F6-41F4-B448-B090A57D9726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDGI.WebApp", "IDGI.WebApp\IDGI.WebApp.csproj", "{52E56878-940C-45BB-8E0A-69432FFED557}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB44753D-B7F6-41F4-B448-B090A57D9726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB44753D-B7F6-41F4-B448-B090A57D9726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB44753D-B7F6-41F4-B448-B090A57D9726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB44753D-B7F6-41F4-B448-B090A57D9726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52E56878-940C-45BB-8E0A-69432FFED557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E56878-940C-45BB-8E0A-69432FFED557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E56878-940C-45BB-8E0A-69432FFED557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E56878-940C-45BB-8E0A-69432FFED557}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA9DAEE9-2AC5-44FD-A562-694D7E3C7366}
+	EndGlobalSection
+EndGlobal

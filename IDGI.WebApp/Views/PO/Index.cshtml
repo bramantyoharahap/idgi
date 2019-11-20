@@ -1,0 +1,170 @@
+﻿
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet box yellow">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i>Manage PO
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body flip-scroll">
+                            <div id="toolbar-container">
+                                <div id="btnAdd-container">
+                                    <button id="btn-add-poh" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add</button>
+                                </div>
+                                <div id="btnSave-container" class="hidden">
+                                    <button id="btn-saveheader" class="btn btn-default" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Save PO Header</button>
+                                </div>
+                                <div id="btnCancel-container" class="hidden">
+                                    <button id="btn-cancelpo" class="btn btn-default" data-toggle="modal"><span class=""></span> Cancel</button>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="table-container">
+                                <div>
+                                    <table id="tbl-po" class="table table-bordered table-striped table-condensed flip-content">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="col-md-1">ID</th>
+                                                <th scope="col" class="col-md-2">Code</th>
+                                                <th scope="col" class="col-md-2">Date</th>
+                                                <th scope="col" class="col-md-2">Supplier</th>
+                                                <th scope="col" class="col-md-3">Remark</th>
+                                                <th scope="col" class="col-md-2">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="form-container" hidden>
+                                <form action="#" id="form-header">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="control-label">ID</label>
+                                            <input type="text" class="form-control" placeholder="[AUTO GENERATE]" readonly id="id-po">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Code</label>
+                                            <input type="text" class="form-control" placeholder="Enter text" id="code-po">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Date</label>
+                                            <div class="input-group input-medium date date-picker" data-date-format="yyyy/mm/dd" data-date-start-date="+0d">
+                                                <input type="text" class="form-control" readonly id="date-po">
+                                                <span class="input-group-btn">
+                                                    <button class="btn default" type="button"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Supplier</label>
+                                            <input type="text" class="form-control" placeholder="Enter text" id="supplier-po">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Remarks</label>
+                                            <textarea id="remarks-po" class="form-control" cols="40" rows="5"></textarea>
+                                            @*<input type="text" class="form-control" placeholder="Enter text" id="remarks-po">*@
+                                        </div>
+                                    </div>
+                                </form>
+                                <div id="table-container-pod">
+                                    <div id="btnAddPOD-container">
+                                        <button id="btn-add-pod" class="btn btn-default" data-toggle="modal" data-target="#frm-setupdetail"><span class="glyphicon glyphicon-plus"></span> Add PO Line</button>
+                                    </div>
+                                    <br />
+                                    <div id="tblpod-container">
+                                        <table id="tbl-pod" class="table table-bordered table-striped table-condensed flip-content">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="col-md-1">ID</th>
+                                                    <th scope="col" class="col-md-2">PO ID</th>
+                                                    <th scope="col" class="col-md-2">Product ID</th>
+                                                    <th scope="col" class="col-md-2">Quantity</th>
+                                                    <th scope="col" class="col-md-3">Price</th>
+                                                    <th scope="col" class="col-md-2">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="frm-setupdetail" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Setup Customer</h3>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label">ID</label>
+                            <input type="text" class="form-control" placeholder="[AUTO GENERATE]" readonly id="id-pod">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">ORDER ID</label>
+                            <input type="text" class="form-control" placeholder="PO ID" id="code-pod" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Product ID</label>
+                            <input type="text" class="form-control" placeholder="Enter text" id="product-pod">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Quantity</label>
+                            <input type="text" class="form-control" placeholder="Enter text" id="qty-pod">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Unit Price</label>
+                            <input type="text" class="form-control" placeholder="Enter text" id="price-pod">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save" class="btn btn-sm btn-default">Save</button>
+                <button class="btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/App/Product.js")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btn-saveheader').bind('click', PO.Save);
+            $('#btn-add-poh').bind('click', PO.onAddClick);
+            $('#btn-cancelpo').bind('click', PO.CancelPO);
+            $('#frm-setup').on('hidden.bs.modal', function () {
+                $(this).find('input').val('').end();
+            });
+            PO.LoadData();
+            $('#btnSave-container').hide();
+        });
+    </script>
+}
+

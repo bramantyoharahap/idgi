@@ -1,0 +1,132 @@
+﻿<div class="page-content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet box yellow">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i>Manage Supplier
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                                <a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body flip-scroll">
+                            <div>
+                                <button id="btn-add" class="btn btn-default" data-toggle="modal" data-target="#frm-setup"><span class="glyphicon glyphicon-plus"></span> Add</button>
+                            </div>
+                            <br />
+                            <div>
+                                <table id="tbl-supplier" class="table table-bordered table-striped table-condensed flip-content">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="col-md-1">ID</th>
+                                            <th scope="col" class="col-md-2">Code</th>
+                                            <th scope="col" class="col-md-5">Name</th>
+                                            <th scope="col" class="col-md-2">City</th>
+                                            <th scope="col" class="col-md-2">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="portlet-body form" id="form-editor">
+                            <!-- BEGIN FORM-->
+                            @*<form action="#">
+
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="control-label">ID</label>
+                                        <input type="text" class="form-control" placeholder="[AUTO GENERATE]" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Code</label>
+                                        <input type="text" class="form-control" placeholder="Enter text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">City</label>
+                                        <input type="text" class="form-control" placeholder="Enter text">
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="btn-set pull-right">
+                                        <button type="button" class="btn default">Action 1</button>
+                                        <button type="button" class="btn red">Action 2</button>
+                                        <button type="button" class="btn yellow">Action 3</button>
+                                    </div>
+                                </div>
+                            </form>*@
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="frm-setup" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Setup Customer</h3>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label">ID</label>
+                            <input type="text" class="form-control" placeholder="[AUTO GENERATE]" readonly id="id-supplier">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Code</label>
+                            <input type="text" class="form-control" placeholder="Enter text" id="code-supplier">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter text" id="name-supplier">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">City</label>
+                            <input type="text" class="form-control" placeholder="Enter text" id="city-supplier">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-save" class="btn btn-sm btn-default">Save</button>
+                <button class="btn btn-sm btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/App/Supplier.js")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#btn-save').bind('click', Supplier.Save);
+            $('#frm-setup').on('hidden.bs.modal', function () {
+                $(this).find('input').val('').end();
+            });
+            Supplier.LoadData();
+        });
+    </script>
+}
+
